@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0d161c;
+  --card: #152028;
+  --border: #1e2d38;
+  --accent: #14b8a6;
+  --accent-hover: #2dd4bf;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-dark-bg text-slate-100 antialiased;
+  background-color: var(--bg);
+}
+
+/* Hero gradient mesh - teal/emerald */
+.hero-mesh {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(20, 184, 166, 0.2), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(16, 185, 129, 0.12), transparent),
+    radial-gradient(ellipse 50% 30% at 20% 80%, rgba(34, 211, 238, 0.1), transparent);
+}
+
+/* Subtle grid overlay */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--card);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Section spacing - compact; scroll-margin so fixed nav doesn't hide headings */
+section {
+  @apply py-8 md:py-10 scroll-mt-20;
+}
+
+/* Gradient text - teal → emerald → cyan */
+.gradient-text {
+  @apply bg-gradient-to-r from-teal-400 via-emerald-400 to-cyan-400 bg-clip-text text-transparent;
+  padding-top: 2px;
+  line-height: 1.35;
+  display: inline-block;
+}
+
+/* Glass card */
+.glass-card {
+  @apply rounded-2xl border border-dark-border bg-dark-card/80 backdrop-blur-sm transition-all duration-300 hover:border-teal-500/40 hover:shadow-lg hover:shadow-teal-500/5;
+}
+
+/* Link hover */
+.link-hover {
+  @apply transition-colors duration-200 hover:text-teal-400;
+}
+
+/* Glow button - teal */
+.btn-glow {
+  box-shadow: 0 0 20px -5px rgba(20, 184, 166, 0.4), 0 0 40px -10px rgba(16, 185, 129, 0.2);
+}
+.btn-glow:hover {
+  box-shadow: 0 0 30px -5px rgba(20, 184, 166, 0.5), 0 0 50px -10px rgba(16, 185, 129, 0.3);
+}
