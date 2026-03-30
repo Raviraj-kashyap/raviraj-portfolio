@@ -6,6 +6,7 @@ import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 
 export default function Home() {
+  console.log("Vesion 1.0");
   return (
     <>
       <Hero />
